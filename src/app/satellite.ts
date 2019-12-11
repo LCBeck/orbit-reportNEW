@@ -8,12 +8,17 @@ launchDate: string;
 constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean){
     this.name = name,
     this.type = type,
-    this.launchDate = launchDate,
+    this.operational = operational,
     this.orbitType = orbitType,
-    this.operational = operational
+    this.launchDate = launchDate
 }
 shouldShowWarning(): boolean {
-return this.type.toUpperCase() === "SPACE DEBRIS";
+        let lowerCaseSpaceDebris = this.type.toLowerCase();
+        if (lowerCaseSpaceDebris === "space debris"){
+            return true;
+            } else
+            return false;
+        }
  }
-}
+
 
